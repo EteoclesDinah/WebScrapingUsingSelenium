@@ -25,22 +25,17 @@ def save_urls():
             for url in urls:
                 writer.writerow([url])
 
-        # Run form.py to scrape content after URLs are saved
-        try:
-            # Using subprocess to call the form.py script
-            result = subprocess.run(['python', 'form.py'], capture_output=True, text=True)
-            print(result.stdout)  # Add this line to debug output
-            print(result.stderr)  # Add this to check for errors
-            if result.returncode == 0:
-                return jsonify({'message': 'URLs saved and scraping finished!', 'output': 'saved to output.csv'}), 200
-            else:
-                return jsonify({'error': 'Failed to run form.py', 'details': result.stderr}), 500
 
-        except Exception as e:
-            return jsonify({'error': str(e)}), 500
+    # Run form.py to scrape content after URLs are saved
+    try:
+        result = subprocess.run(['python', 'form.py'], capture_output=True, text=True)
+        if result.returncode == 0:
+            return jsonify({'message': 'Scraping finished!', 'output': 'saved to output.csv'}), 200
+        else:
+            return jsonify({'error': 'Failed to run form.py', 'details': result.stderr}), 500
 
-    else:
-        return jsonify({'error': 'No URLs provided.'}), 400
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
 
 if __name__ == '__main__':
     app.run(debug=True)

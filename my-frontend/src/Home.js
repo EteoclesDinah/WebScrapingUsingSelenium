@@ -22,6 +22,8 @@ const Home = () => {
 
     const handleSearch = async () => {
         if (urls.length > 0) {
+            setScrapingStatus("Scraping has started..."); // Display message immediately after initiating the search.
+
             try {
                 const response = await fetch("http://127.0.0.1:5000/api/save_urls", {
                     method: "POST",
@@ -33,7 +35,7 @@ const Home = () => {
     
                 if (response.ok) {
                     const data = await response.json();
-                    setScrapingStatus(`Scraping started! Output: ${data.output}`);
+                    setScrapingStatus(`Scraping finished! Output: ${data.output}`);
                 } else {
                     const data = await response.json();
                     setScrapingStatus(`Failed to save URLs. Error: ${data.error}`);
@@ -91,8 +93,8 @@ const Home = () => {
                 </div>
 
                 <button className="searchButton" onClick={handleSearch}>Search</button>
+                <p>{scrapingStatus}</p>
 
-                <p>{scrapingStatus}</p>  {/* Display scraping status */}
             </div>
         </div>
     );

@@ -18,7 +18,7 @@ const Services = () => {
                 </div>
 
                 <div className="deliverables">
-                    <h1>Deliverables of our Webpage</h1>
+                    <h1>Deliverables of our Webpage:</h1>
                     <p>
                         Our web scraping project provides the following deliverables:
                         <ul>
