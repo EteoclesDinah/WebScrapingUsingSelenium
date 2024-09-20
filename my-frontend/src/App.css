@@ -21,13 +21,15 @@
 /*Navbar*/
 
 .nav-bar{
-  background-color: rgb(215, 235, 250);
-  padding: 0.45cm 1cm;
+ 
+
   max-width: fit-content;
   border-radius: 0.8rem;
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
+  margin-left: 1cm;
+  margin-top: 0px;
 }
 
 .nav-bar ul li {
@@ -53,6 +55,137 @@
 
 }
 
+
+/***********************App.js********************************/
+
+.appContainer {
+  background: whitesmoke;
+  height: 100vh;
+  padding: 0.3  cm;
+  
+}
+
+
+
+.landingPage .pageDescription {
+  background: linear-gradient(to right, rgb(51, 0, 70), rgb(152, 4, 152));
+  height: fit-content;
+  border-radius: 0.8rem;
+  padding: 1cm;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.landingPage .pageDescription p {
+  color: white;
+  text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.7);
+}
+
+
+
+
+.pageDescription p:nth-of-type(1){
+  color: whitesmoke;
+  font-size: 20px;
+  font-weight: bolder;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  text-align: center;
+  
+}
+
+.pageDescription p:nth-of-type(2) {
+  color: whitesmoke;
+  font-size: 40px;
+  text-align: center;
+  margin-bottom: 2px;
+  margin-top: 0px;
+}
+
+.pageDescription p:nth-of-type(3) {
+  color: whitesmoke;
+  font-size: 30px;
+  text-align: center;
+  margin-top: 0px;
+}
+
+.pageDescription p:nth-of-type(4) {
+  color: whitesmoke;
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 2px;
+  font-weight: bold;
+}
+
+.pageDescription p:nth-of-type(5) {
+  color: whitesmoke;
+  font-size: 30px;
+  text-align: center;
+  margin-top: 0px;
+  font-weight: bold;
+}
+
+.startButton {
+  cursor: pointer;
+  padding: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 0.5rem;
+  color: rgb(84, 18, 84) ;
+}
+
+
+.demoDescription {
+  background: whitesmoke;
+  height: fit-content;
+  border-radius: 0.8rem;
+  padding: 0.5cm;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.demoDescription p:nth-of-type(1) {
+  font-size: 30px;
+  margin-bottom: 2px;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.demoDescription p:nth-of-type(2) {
+  font-size: 20px;
+  margin-top: 0px;
+  font-family: 'Times New Roman', Times, serif;
+  margin-bottom: 40px;
+}
+
+.extractionStep {
+  display: inline-flex;
+  margin-bottom: 20px;
+  box-shadow: 0 10px 10px -10px rgba(0,0,0,1);
+}
+
+.extractionStep .steps {
+  background: rgb(84, 18, 84);
+  margin-right: 30px;;
+  padding: 15px;
+  color: white;
+  width: 600px;
+  height: fit-content;
+  border-radius: 0.8rem;
+  line-height: 30px;
+}
+
+
+.extractionStep .description img {
+  width: 600px;
+  height: 400px;
+}
+
+
+/*************************Home******************************************/
 .container {
   background: linear-gradient(to right, #97029e, #dc8b4d);
   color: rgb(255, 255, 255);
@@ -93,9 +226,8 @@
 
 .scrappingContent {
   box-shadow: 0 .5rem 1.5rem rgba(0,0,0,1);
-  width: 55%;
+  width: 58%;
   max-width: 800;
-  margin-top: 50px;
   margin-left: 50px;
   border-radius: 0.8rem;
   display: flex;

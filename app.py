@@ -9,7 +9,7 @@ CORS(app)  # Enable CORS for all routes
 # Route to return a hello message from the backend
 @app.route('/api/data', methods=['GET'])
 def get_data():
-    return jsonify({'message': 'Hello from the backend!'})
+    return jsonify({'message': 'Hello and Welcome!!'})
 
 # Route to save URLs to a CSV file and run form.py script
 @app.route('/api/save_urls', methods=['POST'])
@@ -32,7 +32,7 @@ def save_urls():
             print(result.stdout)  # Add this line to debug output
             print(result.stderr)  # Add this to check for errors
             if result.returncode == 0:
-                return jsonify({'message': 'URLs saved and scraping started!', 'output': result.stdout}), 200
+                return jsonify({'message': 'URLs saved and scraping finished!', 'output': 'saved to output.csv'}), 200
             else:
                 return jsonify({'error': 'Failed to run form.py', 'details': result.stderr}), 500
 

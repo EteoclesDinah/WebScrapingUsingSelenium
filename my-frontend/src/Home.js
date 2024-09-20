@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import './App.css';
 
+
 const Home = () => {
     
     const [url, setUrl] = useState("");
@@ -49,10 +50,17 @@ const Home = () => {
 
     return (
         <div className="container">
+         
             <div className="homeDescription">
                 <h1>Your Go-To Web Scraping Tool!!</h1>
                 <p>Want to extract web content seamlessly?</p>
                 <p>Look no further!</p>
+                <p>
+                    Harness the power of web scraping to collect data efficiently. <br></br>
+                    Whether you're gathering information for research,<br></br> 
+                    monitoring trends or compilinng useful resources,<br></br> 
+                    our tool simplifies the process for you.
+                </p>
             </div>
 
             <div className="scrappingContent">

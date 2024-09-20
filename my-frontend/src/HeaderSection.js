@@ -7,7 +7,8 @@ const HeaderSection = () => {
         <header className="header">
             <div className="logo">
                 <img 
-                src=""/>
+                src="" 
+                alt=""/>
             </div>
             <nav className="nav-bar">
                 <ul>
@@ -26,16 +27,8 @@ const HeaderSection = () => {
                             Services
                         </NavLink>
                     </li>
-                    <li>
-                        <NavLink to="/FAQ" activeClassName="active">
-                            FAQ
-                        </NavLink>
-                    </li>
-                    <li>
-                        <NavLink to="/Contact" activeClassName="active">
-                            Contact
-                        </NavLink>
-                    </li>
+                    
+                    
                 </ul>
             </nav>
         </header>
