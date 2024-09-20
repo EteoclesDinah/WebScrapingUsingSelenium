@@ -234,13 +234,14 @@
   flex-direction: column;
   overflow-wrap: break-word;  /* Allow URLs to break to the next line */
   word-wrap: break-word;      /* Support for older browsers */
+  padding: 10px;
 }
 
 .scrappingContent input {
   padding: 1rem;
   margin: 5px;
   border-radius: 0.8rem;
-  
+  margin-top: 10px;
 }
 
 .addButton {
@@ -328,4 +329,9 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+.aboutPage {
+  padding: 1cm;
 }
