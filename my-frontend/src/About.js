@@ -4,7 +4,7 @@ const About = () => {
     return(
         <div className="container">
             <div className="aboutPage">
-                <div className="aboutUS">
+                <div className="aboutUs">
                     <h1>About Us</h1>
                     <p>
                         Hello and Welcome to our Webpage, your one-stop solution for web data extraction.
@@ -56,7 +56,7 @@ const About = () => {
                 </div>
 
                 <div className="team">
-                    <h1>Meet the Team</h1>
+                    
                 </div>
             </div>
         </div>

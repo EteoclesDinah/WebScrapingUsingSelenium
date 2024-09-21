@@ -187,12 +187,11 @@
 
 /*************************Home******************************************/
 .container {
-  background: linear-gradient(to right, #97029e, #dc8b4d);
+  background: linear-gradient(to right, #7a0f7f, #bc590d);
   color: rgb(255, 255, 255);
   margin-top: 3vh;
   display: flex;
   height: 100vh;
-  margin: 10px;
   border-radius: 0.8rem;
 }
 
@@ -332,16 +331,33 @@
 }
 
 
+/*************************************ABout section***************************/
 .aboutPage {
   padding: 1cm;
+  display: flex;
+
+}
+
+.aboutUs, .aboutWebpage, .ourMission, .workingPrinciple{
+  box-shadow: 0 .3rem 0.5rem rgba(0,0,0,1);
+  padding: 20px;
+  margin: 10px;
+  line-height: 25px;
+}
+
+.aboutPage h1 {
+  color: #e8e6e6;
+  font-size: 30px;
+  margin-bottom: 25px;
+}
+
+.aboutPage p {
+  color: whitesmoke;
+  font-size: 18px;
 }
 
 
-
-
-
-
-
+/*******************services section*********************************/
 
 .servicesPage {
   padding: 1cm;
