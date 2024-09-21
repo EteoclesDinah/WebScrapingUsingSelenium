@@ -361,4 +361,24 @@
 
 .servicesPage {
   padding: 1cm;
+  display: flex;
+}
+
+.services, .deliverables {
+  box-shadow: 0 .3rem 0.5rem rgba(0,0,0,1);
+  padding: 20px;
+  margin: 10px;
+  line-height: 25px;
+}
+
+.servicesPage h1 {
+  color: #e8e6e6;
+  font-size: 35px;
+  margin-bottom: 25px;
+}
+
+.servicesPage p{
+  color: whitesmoke;
+  font-size: 20px;
+  color: whitesmoke;
 }

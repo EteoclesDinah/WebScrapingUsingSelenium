@@ -6,7 +6,7 @@ const Home = () => {
     
     const [url, setUrl] = useState("");
     const [urls, setUrls] = useState([]);
-    const [scrapingStatus, setScrapingStatus] = useState("");
+    const [scrapingStatus, setScrapingStatus] = useState(""); 
 
     const handleAddUrl = () => {
         if (url.trim()) {
@@ -57,12 +57,14 @@ const Home = () => {
                 <h1>Your Go-To Web Scraping Tool!!</h1>
                 <p>Want to extract web content seamlessly?</p>
                 <p>Look no further!</p>
+                {/*
                 <p>
                     Harness the power of web scraping to collect data efficiently. <br></br>
                     Whether you're gathering information for research,<br></br> 
                     monitoring trends or compilinng useful resources,<br></br> 
                     our tool simplifies the process for you.
                 </p>
+                */}
             </div>
 
             <div className="scrappingContent">

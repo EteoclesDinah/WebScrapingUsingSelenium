@@ -1,8 +1,10 @@
 import React from "react";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import './App.css';
+import './App.css'; 
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 
 import Screenshot_3 from './images/Screenshot_3.png';
@@ -20,7 +22,7 @@ function LandingPage() {
         setData(response.data.message);
       })
       .catch(error => {
-        console.error('Error fetching data:', error);
+        console.error('Error fetching data:', error); 
       });
   }, []);
 
@@ -37,8 +39,11 @@ function LandingPage() {
             <p>Turn pages into structured data within clicks.</p>
 
             <Link to="/home">
-              <button className='startButton'>GET STARTED-</button>
+              <button className='startButton'>
+                GET STARTED <FontAwesomeIcon icon={faArrowRight} />
+              </button>
             </Link>
+
           </div> 
 
           <div className="demoDescription">
@@ -68,6 +73,7 @@ function LandingPage() {
                 <img src={Screenshot_5} alt=""></img>
               </div>
             </div>
+
 
             <div className="extractionStep">
               <div className="steps">
