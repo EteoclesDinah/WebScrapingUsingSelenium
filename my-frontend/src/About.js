@@ -7,7 +7,7 @@ const About = () => {
                 <div className="aboutUs">
                     <h1>About Us</h1>
                     <p>
-                        Hello and Welcome to our Webpage, your one-stop solution for web data extraction.
+                        <b>Hello</b> and <b>Welcome</b> to our Webpage, your one-stop solution for web data extraction.
                         We are a passionate team of two, dedicated to make data collection simpler and more
                         accessible. <br></br>
                         Our mission is to turn complex web scraping challenges into effortless experiences.

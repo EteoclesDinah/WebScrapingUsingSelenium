@@ -27,6 +27,11 @@ const HeaderSection = () => {
                             Services
                         </NavLink>
                     </li>
+                    <li>
+                        <NavLink to="/Contact" activeClassName="active">
+                            Contact
+                        </NavLink>
+                    </li>
                     
                     
                 </ul>

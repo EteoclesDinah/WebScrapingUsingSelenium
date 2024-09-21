@@ -60,7 +60,7 @@
 
 .appContainer {
   background: whitesmoke;
-  height: 100vh;
+  height: 100%;
   padding: 0.3  cm;
   
 }
@@ -187,13 +187,14 @@
 }
 
 
-/*************************Home******************************************/
+/*************************Home****************************************************************************************************************************/
 .container {
   background: linear-gradient(to right, #7a0f7f, #bc590d);
   color: rgb(255, 255, 255);
   margin-top: 3vh;
   display: flex;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   border-radius: 0.8rem;
 }
 
@@ -227,16 +228,19 @@
 
 
 .extractDeli {
-  text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.7);
+  text-shadow: 0px 5px 15px rgba(9, 0, 0, 0.7);
+  margin-bottom: 5cm;
 }
 
-
+.extractDeli h1{
+  color: antiquewhite;
+}
 
 .scrappingContent {
   box-shadow: 0 .5rem 1.5rem rgba(0,0,0,1);
-  width: 55%;
-  height: 94vh;
-  max-width: 700;
+  width: 900px;
+  height: 100%;
+  
   margin-left: 50px;
   border-radius: 0.8rem;
   display: flex;
@@ -244,10 +248,7 @@
   overflow-wrap: break-word;  /* Allow URLs to break to the next line */
   word-wrap: break-word;      /* Support for older browsers */
   padding: 20px;
-  position: absolute;
-  top: 105px;
-  left: 590px;
-  z-index: 1000;
+  right: 0;
 }
 
 .scrappingContent input {
@@ -276,7 +277,7 @@
 
 .scrappingContent .urlList {
   margin-top: 20px;
-  width: 100%s;
+  width: 98%;
   box-shadow: 0 .3rem 0.5rem rgba(0,0,0,1);
   padding: 10px;
 }
@@ -310,6 +311,10 @@
 .buttonContainer {
   display: flex;
   gap: 15px;
+ /* margin-bottom: 335px;*/
+ margin-top: 200px;
+ margin-bottom: 135px;
+
 }
 
 .saveURLButton {
@@ -390,7 +395,7 @@
 }
 
 .aboutPage h1 {
-  color: #e8e6e6;
+  color: #080808;
   font-size: 30px;
   margin-bottom: 25px;
 }
@@ -416,7 +421,7 @@
 }
 
 .servicesPage h1 {
-  color: #e8e6e6;
+  color: #2f0404;
   font-size: 35px;
   margin-bottom: 25px;
 }
@@ -425,4 +430,29 @@
   color: whitesmoke;
   font-size: 20px;
   color: whitesmoke;
+}
+
+
+.contactContainer {
+  text-align: center;
+  box-shadow: 0 10px 18px rgba(0,0,0,0.51);
+  margin: 50px;
+  width: 100%;
+  height: 50vh;
+  padding: 2cm;
+}
+
+.socialIcons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin: 50px;
+}
+
+.socialIcons a {
+  font-size: 3rem;
+  color: #ffffff;
+  text-decoration: none;
+  margin: 20PX;
 }
