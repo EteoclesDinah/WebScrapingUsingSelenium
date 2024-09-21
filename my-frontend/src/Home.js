@@ -1,9 +1,25 @@
-import React, { useState } from "react";
+import React, { useEffect, useState, useMemo } from "react";
 import './App.css';
 
 
 const Home = () => {
+
+    const deliverables = useMemo(() => ["URLs", "HTML_dumps", "Webpage Screenshots", "Structured Output File"], []);
+    const [currentDeli, setCurrentDeli] = useState(deliverables[0]);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentDeli((prevDeli) => {
+                const currentIndex = deliverables.indexOf(prevDeli);
+                const nextIndex = (currentIndex + 1) % deliverables.length;
+                return deliverables[nextIndex];
+            });
+        }, 2000);   //change every 2 seconds
+
+        return () => clearInterval(interval);  //cleanup on unmount
+    }, [deliverables]);
     
+
     const [url, setUrl] = useState("");
     const [urls, setUrls] = useState([]);
     const [scrapingStatus, setScrapingStatus] = useState(""); 
@@ -65,7 +81,12 @@ const Home = () => {
                     our tool simplifies the process for you.
                 </p>
                 */}
+                <div>
+                    <h1>Extract {currentDeli}</h1>
+                </div>
+
             </div>
+
 
             <div className="scrappingContent">
                 <input
