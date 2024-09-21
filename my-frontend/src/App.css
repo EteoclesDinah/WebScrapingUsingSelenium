@@ -68,7 +68,9 @@
 
 
 .landingPage .pageDescription {
-  background: linear-gradient(to right, rgb(51, 0, 70), rgb(152, 4, 152));
+ 
+  background: radial-gradient(circle, rgba(152, 4, 152, 1), rgba(51, 0, 70, 0.8)); /*radial gradient*/
+  
   height: fit-content;
   border-radius: 0.8rem;
   padding: 1cm;
@@ -223,17 +225,29 @@
   word-spacing: 2.5px;
 }
 
+
+.extractDeli {
+  text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.7);
+}
+
+
+
 .scrappingContent {
   box-shadow: 0 .5rem 1.5rem rgba(0,0,0,1);
-  width: 58%;
-  max-width: 800;
+  width: 55%;
+  height: 94vh;
+  max-width: 700;
   margin-left: 50px;
   border-radius: 0.8rem;
   display: flex;
   flex-direction: column;
   overflow-wrap: break-word;  /* Allow URLs to break to the next line */
   word-wrap: break-word;      /* Support for older browsers */
-  padding: 10px;
+  padding: 20px;
+  position: absolute;
+  top: 105px;
+  left: 590px;
+  z-index: 1000;
 }
 
 .scrappingContent input {
@@ -244,24 +258,27 @@
 }
 
 .addButton {
-  padding: 10px 30px;
+  padding: 15px 30px;
   max-width: fit-content;
   border-radius: 0.8rem;
-  background-color: #7c0c84;
   outline: none;
   cursor: pointer;
-  color: white;
+  color: rgb(0, 0, 0);
   margin-top: 10px;
   margin-left: 10px;
+  font-weight: bold;
+  font-size: 20px;
 }
 
 .addButton:hover {
-  background-color: rgb(114, 180, 246);
+  background-color: rgb(138, 6, 132);
 }
 
-.scrappingContent urlList {
+.scrappingContent .urlList {
   margin-top: 20px;
   width: 100%s;
+  box-shadow: 0 .3rem 0.5rem rgba(0,0,0,1);
+  padding: 10px;
 }
 
 .urlList ul{
@@ -290,8 +307,13 @@
   background-color: darkred;
 }
 
-.searchButton {
-  padding: 10px 30px;
+.buttonContainer {
+  display: flex;
+  gap: 15px;
+}
+
+.saveURLButton {
+  padding: 15px 30px;
   max-width: fit-content;
   border-radius: 0.8rem;
   background-color: #7c0c84;
@@ -300,10 +322,32 @@
   color: white;
   margin-top: 10px;
   margin-left: 10px;
+  font-weight: bold;
+  font-size: 20px;
 }
 
+.saveURLButton:hover{
+  background: #ffffff;
+  color: #7a0f7f;
+}
+.searchButton {
+  padding: 15px 30px;
+  max-width: fit-content;
+  border-radius: 0.8rem;
+  background-color: #7c0c84;
+  outline: none;
+  cursor: pointer;
+  color: white;
+  margin-top: 10px;
+  margin-left: 10px;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+
 .searchButton:hover {
-  background-color: rgb(114, 180, 246);
+  background: #ffffff;
+  color: #7a0f7f;
 }
 
 .App-header {

@@ -11,9 +11,28 @@ CORS(app)  # Enable CORS for all routes
 def get_data():
     return jsonify({'message': 'Hello and Welcome!!'})
 
-# Route to save URLs to a CSV file and run form.py script
+# Route to only save URLs to a CSV file
 @app.route('/api/save_urls', methods=['POST'])
 def save_urls():
+    data = request.get_json()
+
+    if 'urls' in data:
+        urls = data['urls']
+        # Save URLs to CSV file
+        with open('url_lists.csv', mode='w', newline='') as file:
+            writer = csv.writer(file)
+            writer.writerow(["URL"])
+            for url in urls:
+                writer.writerow([url])
+
+        # Return a success response
+        return jsonify({'message': 'URLs saved successfully!', 'output': 'URLs saved to url_lists.csv'}), 200
+    else:
+        return jsonify({'error': 'No URLs provided', 'output':'Failed to save URLs'}), 400
+
+# Route to save URLs to a CSV file and run form.py script
+@app.route('/api/extract_data', methods=['POST'])
+def extract_data():
     data = request.get_json()
 
     if 'urls' in data:

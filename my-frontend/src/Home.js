@@ -24,16 +24,55 @@ const Home = () => {
     const [urls, setUrls] = useState([]);
     const [scrapingStatus, setScrapingStatus] = useState(""); 
 
+    const [showUrlList, setShowUrlList] = useState(false); //to show added urls section only after clicking add button
+
     const handleAddUrl = () => {
         if (url.trim()) {
-            setUrls([...urls, url]);
-            setUrl("");
+            setUrls((prevUrls) => {
+                const newUrls = [...prevUrls, url];
+                setUrl("");
+                setShowUrlList(true); // Show the URL list when a URL is added
+                return newUrls;
+            });
         }
     };
 
     const handleRemoveUrl = (indexToRemove) => {
         const filteredUrls = urls.filter((_, index) => index !== indexToRemove);
         setUrls(filteredUrls);
+        if (filteredUrls.length === 0) {
+            setShowUrlList(false); // Hide the URL list if there are no URLs
+        }
+    };
+
+    const handleSaveURL = async () => {
+        if (urls.length > 0) {
+            setScrapingStatus("Scrapping has started...");
+
+            try {
+                const response = await fetch("http://127.0.0.1:5000/api/save_urls", {
+                   method: "POST",
+                   headers: {
+                        "Content-Type": "application/json",
+                   },
+                   body: JSON.stringify({urls}), 
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    setScrapingStatus(`Scraping finished! Output: ${data.output}`);
+                } else {
+                    const data = await response.json();
+                    setScrapingStatus(`Failed to save URLs. Error: ${data.error}`);
+                }
+                
+            } catch (error) {
+                console.error("Error", error);
+                setScrapingStatus("An error occured while saving URLs.");
+            }
+        } else {
+            setScrapingStatus("Please add at least one URL.");
+        }
     };
 
     const handleSearch = async () => {
@@ -41,7 +80,7 @@ const Home = () => {
             setScrapingStatus("Scraping has started..."); // Display message immediately after initiating the search.
 
             try {
-                const response = await fetch("http://127.0.0.1:5000/api/save_urls", {
+                const response = await fetch("http://127.0.0.1:5000/api/extract_data", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
@@ -81,7 +120,7 @@ const Home = () => {
                     our tool simplifies the process for you.
                 </p>
                 */}
-                <div>
+                <div className="extractDeli">
                     <h1>Extract {currentDeli}</h1>
                 </div>
 
@@ -98,26 +137,38 @@ const Home = () => {
 
                 <button className="addButton" onClick={handleAddUrl}>Add</button>
 
-                <div className="urlList">
-                    <h2>Added URLs</h2>
-                    <ul>
-                        {urls.map((url, index) => (
-                            <li key={index}>
-                                {url}
-                                <button
-                                    className="removeButton"
-                                    onClick={() => handleRemoveUrl(index)}
-                                >
-                                    Remove
-                                </button>
-                            </li>
-                        ))}
-                    </ul>
+                {showUrlList && ( // Conditionally render the URL list
+                    <div className="urlList">
+                        <h2 style={{
+                            fontSize: "30px",
+                            color: "#4c0651",
+                            marginTop: "10px",
+                            marginBottom: "25px"
+                        }}>Added URLs</h2>
+                        <ul>
+                            {urls.map((url, index) => (
+                                <li key={index}>
+                                    {url}
+                                    <button
+                                        className="removeButton"
+                                        onClick={() => handleRemoveUrl(index)}
+                                    >
+                                        Remove
+                                    </button>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                )}
+
+                <div className="buttonContainer">
+                    <button className="saveURLButton" onClick={handleSaveURL}>Save URLs Only</button>
+                
+                
+                    <button className="searchButton" onClick={handleSearch}>Extract Data</button>
+                    
                 </div>
-
-                <button className="searchButton" onClick={handleSearch}>Search</button>
                 <p>{scrapingStatus}</p>
-
             </div>
         </div>
     );

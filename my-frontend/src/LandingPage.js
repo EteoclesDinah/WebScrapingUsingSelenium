@@ -32,8 +32,8 @@ function LandingPage() {
           <div className='pageDescription'>
             <p>{data}</p>
 
-            <p>Web Scraping is Complex.</p>
-             <p>   We Make it Simple.</p>
+            <p>Web Scraping is Complex?</p>
+             <p>   We Make it Simple for You.</p>
 
             <p>Quickly scrape web data without coding.</p>
             <p>Turn pages into structured data within clicks.</p>
